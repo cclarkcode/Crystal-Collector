@@ -5,24 +5,48 @@ var game = {
 	crystal_values: [0, 0, 0, 0],
 	userscore: 0,
 	start: true,
+
+	//Create or reset initial game settings
 	initialize: function () {
 
-		// $("#start").css("display", "none");
+		//Create target number
 		game.target = Math.floor(Math.random() * 101) +19;
 		$("#target").html(game.target);
 
+		//Set user score to zero
 		game.userscore = 0;
 		$("#score").html(game.userscore);
 
+
+		//Create crystal values and ensure no duplicates
 		for (var i = 0; i < game.crystal_values.length; i++) {
-			game.crystal_values[i] = Math.floor(Math.random() * 11) +1;
 			
+			do{
+				var newvalue=true;
+				game.crystal_values[i] = Math.floor(Math.random() * 11) +1;
+
+
+				if (i>0) {
+					for (var j = i-1; j>=0; j--) {
+						if (game.crystal_values[j] === game.crystal_values[i]) {
+							
+							newvalue=false;
+						}
+					}
+				}
+			}
+			while (!newvalue);
+			console.log(game.crystal_values[i]);
 		}
 
 		game.start=false;
+
+		//Remove start game banner
 		$(".start").css("display", "none");
 
 	},
+
+	//Add crystal value to user's score and check for win or loss
 	addscore: function(index) {
 
 		if(!game.start) {
@@ -37,6 +61,8 @@ var game = {
 
 
 	},
+
+	//Check for win or loss
 	checkscore: function() {
 
 		if(game.userscore > game.target) {
@@ -61,6 +87,8 @@ var game = {
 	};
 
 	//Start actual script
+
+	//Allow for game start by key press or clicking on start banner
 	 document.onkeyup = function(event) {
 
 		if(game.start) {
@@ -77,6 +105,8 @@ var game = {
 		}
 	});
 
+
+	//On click events for each crystal. Value sent in function represents index of game.crystal_values
 	 $("#crystal1").on("click", function() {
 
 	 	game.addscore(0);
