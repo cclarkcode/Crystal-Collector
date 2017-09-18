@@ -1,0 +1,112 @@
+body {
+
+	background-image: url(../images/hypnotize.png);
+}
+
+h1 {
+
+	background: orange;
+	font-size: 40px;
+	color: white;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+
+.container {
+
+	margin: 10px;
+	width: 100%;
+}
+
+.description {
+
+
+	background: beige;
+	width: 400px;
+	position: relative;
+	
+	margin-bottom: 10px;
+	
+}
+p {
+
+	padding: 10px 5px;
+	color: green;
+	font-size: 14px;
+	line-height: 1.2em;
+}
+
+#target {
+
+	background: #32CD32;
+	height: 125px;
+	width: 200px;
+	display: block;
+	float: left;
+	margin-right: 10px;
+	font-size: 30px;
+	color: #8B008B;
+	padding: 5px;
+}
+
+#winloss {
+
+	background: #7FFFD4;
+	height: 125px;
+	float: left;
+
+
+}
+
+.wrap {
+
+	overflow: auto;
+	margin: 0 0 10px 0;
+}
+
+.scoreboard {
+
+	width: 200px;
+	color: white;
+	background: teal;
+	margin: 0 0 10px 0;
+	padding:5px;
+}
+
+#crystals {
+
+	margin-bottom: 10px;
+}
+
+#score {
+
+	height: 125px;
+	display: block;
+	font-size: 30px;
+}
+
+.crystal {
+
+	cursor: pointer;
+}
+
+.start {
+
+	position: absolute;
+	top: 45%;
+	left: 45%;
+	background: black;
+	color: white;
+	width: 20%;
+	padding: 0 5px 30px 5px;
+	/*display: none;*/
+	cursor: pointer;
+
+}
+
+#banner {
+	font-size: 20px;
+	padding: 5px 0;
+	height: 30px;
+	width: 100%;
+}
